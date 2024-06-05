@@ -10,7 +10,7 @@ Welcome to my JavaScript Games repository! This repository showcases various gam
 
 ### 1. TIC-TAC-TOE
 <p align="center">
-  <img src="" alt="JavaScript Logo" width="200">
+  <img src="https://github.com/abhishek02122002/Games-with-JS-/blob/main/tic-tac-toe/Screenshot%202024-06-05%20205050.png" alt="JavaScript Logo" width="200">
 </p>
 
 ## Contributing
