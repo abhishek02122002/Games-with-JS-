@@ -9,8 +9,9 @@ Welcome to my JavaScript Games repository! This repository showcases various gam
 ## Games List
 
 ### 1. TIC-TAC-TOE
-
----
+<p align="center">
+  <img src="" alt="JavaScript Logo" width="200">
+</p>
 
 ## Contributing
 Feel free to fork the repository and submit a pull request if you have any suggestions or improvements. Your contributions are always welcome!
