@@ -21,6 +21,12 @@ window.addEventListener('click',(e)=>{
      bloodSpot.style.top = e.pageY + "px";
      bloodSpot.style.left = e.pageX + "px";
      voice.play();
+     //i have to remove the blood-spot from the audio btn
+     // i have to remove the blood-spot from the bg btn
+     if(toggleSoundDiv.contains(e.target)){
+          bloodSpot.style.display='none';
+     }
+     // if()
 
      
 },false);
@@ -101,7 +107,8 @@ terror.addEventListener('click', () => {
 }, false);
 
 // background-change
-
+let bgDivSelector= document.getElementById('background');
+bgDivSelector.addEventListener('click',(e)=>{e.stopPropagation()},false)
 document.addEventListener('DOMContentLoaded', (event) => {
      const forest = document.querySelector('#forest');
      forest.addEventListener('click', (e) => {
@@ -139,3 +146,42 @@ document.addEventListener('DOMContentLoaded', (event) => {
  setTimeout(displayScoreAndReload, 10000); 
 
  
+ // SOUND ON AND OFF FUNCTIONS
+ 
+let soundOffBtn = document.querySelector('.sound-off');
+let soundOnBtn = document.querySelector('.sound-on');
+let toggleSoundDiv = document.getElementById('toggle');
+let soundImg = document.createElement('img');
+soundImg.setAttribute('src','./sound-on.png');
+// soundImg.setAttribute('width','50px');
+soundImg.setAttribute('height','20px');
+soundImg.setAttribute('width','20px');
+// voice and manDeathVoice
+
+function pauseAndPlaySound(e){
+               e.stopPropagation();
+
+     if(!voice.muted){
+          alert("Sound Paused");
+          voice.muted = true;
+          voice.volume=0.0;
+          manDeathVoice.volume=0.0;
+          manDeathVoice.muted = true;
+          soundImg.setAttribute('src','./sound-off.png');
+          toggleSoundDiv.appendChild(soundImg);
+          return;
+     }
+     else{
+          alert("Audio is playing");
+          voice.muted=false;
+          manDeathVoice.muted=false;
+          manDeathVoice.volume=1.0;
+          voice.volume=1.0;
+          soundImg.removeAttribute('src');
+          soundImg.setAttribute('src','./sound-on.png');
+          toggleSoundDiv.appendChild(soundImg);
+     }
+}
+toggleSoundDiv.addEventListener('click',pauseAndPlaySound,false);
+
+
